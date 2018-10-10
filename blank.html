@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *,
+  * * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+  #wrapper {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(135deg,#2b2379 0,#4857f5 100%);
+    overflow: hidden;
+  }
+  .bg-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 16%;
+    min-width: 360px;
+    max-width: 600px;
+    opacity: 0.5;
+    transform: scale(1) translate(0);
+    animation: fade-in 1s ease-out;
+  }
+
+  @keyframes fade-in {
+    0%   { opacity: 0; transform: scale(0.8) translate(-15%, 25%);}
+    100% { opacity: 0.5; transform: scale(1) translate(0);}
+  }
+
+  @keyframes appear {
+    0%   { opacity: 0;}
+    100% { opacity: 1;}
+  }
+
+  .container {
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+    animation: appear 1s ease-out;
+  }
+
+  #clock {
+    font-size: 128px;
+    font-weight: 100;
+    opacity: 0.9;
+  }
+
+  #date {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-top: 16px;
+    font-weight: 400
+  }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="container">
+      <div id="clock">
+        00:00
+      </div>
+      <div id="date">
+        Today
+      </div>
+    </div>
+    <img src="waves.svg" alt="" class="bg-img">
+  </div>
+  <script src="moment.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
